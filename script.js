@@ -7,7 +7,7 @@ function speak(text){
     text_speak.rate=1
     text_speak.pitch=1
     text_speak.volume=1
-    text_speak.lang="hi-GB"
+    text_speak.lang="ur"
     window.speechSynthesis.speak(text_speak)
 }
 
@@ -15,12 +15,12 @@ function wishMe(){
     let day=new Date()
     let hours=day.getHours()
     if(hours>=0 && hours<12){
-        speak("Good Morning Sir")
+        speak("Good Morning Dear")
     }
     else if(hours>=12 && hours <16){
-        speak("Good afternoon Sir")
+        speak("Good afternoon Dear")
     }else{
-        speak("Good Evening Sir")
+        speak("Good Evening Dear")
     }
 }
 // window.addEventListener('load',()=>{
@@ -44,10 +44,10 @@ function takeCommand(message){
    voice.style.display="none"
     btn.style.display="flex"
     if(message.includes("hello")||message.includes("hey")){
-        speak("hello sir,what can i help you?")
+        speak("hello Dear,what can i help you?")
     }
     else if(message.includes("who are you")){
-        speak("i am virtual assistant ,created by Ayush Sir")
+        speak("i am virtual assistant ,created by Umair Al-Hasan")
     }else if(message.includes("open youtube")){
         speak("opening youtube...")
         window.open("https://youtube.com/","_blank")
@@ -70,7 +70,7 @@ function takeCommand(message){
     }
     else if(message.includes("open whatsapp")){
         speak("opening whatsapp..")
-        window.open("whatsapp://")
+        window.open("com.whatsapp","_blank")
     }
     else if(message.includes("time")){
       let time=new Date().toLocaleString(undefined,{hour:"numeric",minute:"numeric"})
@@ -81,8 +81,8 @@ function takeCommand(message){
         speak(date)
       }
     else{
-        let finalText="this is what i found on internet regarding" + message.replace("shipra","") || message.replace("shifra","")
+        let finalText="this is what i found on internet regarding" + message.replace("romi","") || message.replace("romi","")
         speak(finalText)
-        window.open(`https://www.google.com/search?q=${message.replace("shipra","")}`,"_blank")
+        window.open(`https://www.google.com/search?q=${message.replace("romi","")}`,"_blank")
     }
 }
